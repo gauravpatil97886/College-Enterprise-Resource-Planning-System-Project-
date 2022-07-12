@@ -1,0 +1,6 @@
+asgiref
+Django
+djangorestframework
+djoser
+pytz
+sqlparse
