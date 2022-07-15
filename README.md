@@ -1,4 +1,4 @@
-# SVKM-ERP-System
+# SVKM-ERP-SYSTEM
 
 
 **An ERP system for colleges that allows professors to manage student attendance and exam results on a
