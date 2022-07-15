@@ -5,6 +5,10 @@
 single platform. Professors can generate attendance and results reports. Students can check their
 attendance and exam results daily.**
 
+### ERP Means
+
+- Enterprise resource planning (ERP) consists of technologies and systems companies use to manage and integrate their core business processes. Enterprise resource planning software offers single system solutions that integrate processes across the business. Such applications allow users to interact within a single interface, share information, and enable cross-functional collaboration.
+
 -----------------
 
 
