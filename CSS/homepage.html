@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>Student homepage</title>
+      {% load static %}
+
+    <!-- Bootstrap core CSS -->
+      <link href="{% static '/info/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+      <link href="{% static '/info/homepage/css/heroic-features.css' %}" rel="stylesheet">
+          <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+
+
+  </head>
+
+  <body>
+    <style>
+        body{
+       background-color:whitesmoke;
+         font-family: "Roboto", sans-serif;
+
+     }
+    .row .card {
+  
+    /* background-color: rgba(255,255,255,0.13)!important; */
+    background-color: white;
+    height: 400px;
+    width: 220px;
+    
+    color: rgb(0, 0, 0);
+    
+    
+    border-radius: 10px;
+
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1)!important;
+    box-shadow: 0 0 40px rgb(8 7 16 / 80%)!important;
+  
+}
+.row{
+  height: 27%;
+  background-color: transparent!important;
+  width: 1000px;
+
+}
+.card{
+  margin-top: 15px;
+}
+.row .card .card-img-top{
+  /* background-color: #038C9E; */
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+.container .nav-img{
+  height: 100px;
+  width: 70px;
+}
+.navbar-brand{
+  font-size: 34px;
+}
+.nav-item .nav-link{
+  color: white !important;
+}
+
+
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.display-3{
+  font-size: 70px;
+  margin-top: 30px  ;
+}
+
+
+
+      
+    </style>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color:black;">
+      <div class="container">
+          <a class="navbar-brand" href="{% url 'index' %}">SVKM-ERP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-capitalize">{{ request.user.student.name }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" >
+
+      <header class="jumbotrn my-4 text-center " style="color:black;">
+        <h1 class="display-3 text-capitalize animate-charcter"> <b>Welcome {{ request.user.student.name }}</b></h1>
+<!-- {#        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>#} -->
+{#        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>#}
+      </header>
+
+
+      <!-- Page Features -->
+      <div  style="padding-left:260px;"class="row text-center" style="background-color: none !important;">
+
+        <div class="col-lg-3 col-md-6 mb-4" style="margin-left: 50px;">
+          <div class="card">
+              <a href="{% url 'attendance' request.user.student.USN %}">
+                <img class="card-img-top" src="{% static 'info/images/atte.webp' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Attendance</h4>
+               </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'attendance' request.user.student.USN %}"> View Attendance</a>
+            </div>
+          </div>
+        </div>
+      <br>
+      <br>
+        <!-- <div class="card-footer">
+        </div>
+        <div class="card-footer">
+        </div>
+        <div class="card-footer">
+        </div> -->
+        
+        <div class="col-lg-3 col-md-6  mb-4" style="margin-left: 80px;">
+          <div class="card">
+            <a href="{% url 'marks_list' request.user.student.USN %}">
+              <img class="card-img-top" src="{% static 'info/images/mark1.webp' %}" alt="">
+            </a>
+              <div class="card-body">
+              <h4 class="card-title">Marks</h4>
+              <!-- <p class="card-text">Enter the marks of the students based on the class they are in. This includes -->
+                    <!-- Internals, events and SEE. The marks of the students can also be edited.</p> -->
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-primary" role="button" href="{% url 'marks_list' request.user.student.USN %}">View Marks</a>
+          </div>
+          </div>
+        </div>
+
+
+        
+
+      </div>
+      
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select <b>Logout</b> below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="/accounts/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+
+
+      <script src="{% static '/info/homepage/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  </body>
+
+</html>
