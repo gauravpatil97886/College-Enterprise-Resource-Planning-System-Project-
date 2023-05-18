@@ -1,4 +1,5 @@
-# SVKM-ERP-SYSTEM
+# SVKM-ERP-SYSTEM    ![GitHub repo size](https://img.shields.io/github/repo-size/gauravpatil97886/College-Enterprise-Resource-Planning-System-Project-)
+
 
 
 **An ERP system for colleges that allows professors to manage student attendance and exam results on a
